@@ -5,8 +5,8 @@
     "name": "小米 Mimo TTS",
     "summary": "Xiaomi Mimo TTS 语音合成",
     "author": "foreverben",
-    "homepage": "https://github.com/muxiaoxiii/mimo-tts-updated",
-    "appcast": "https://github.com/muxiaoxiii/mimo-tts-updated/raw/main/appcast.json",
+    "homepage": "https://github.com/muxiaoxiii/bob-plugin-mimo-tts-updated",
+    "appcast": "https://github.com/muxiaoxiii/bob-plugin-mimo-tts-updated/raw/main/appcast.json",
     "minBobVersion": "1.6.0",
     "options": [
         {

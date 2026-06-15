@@ -37,14 +37,14 @@
 ## 安装方法
 
 ### 方法一：直接下载（推荐）
-1. 下载 [mimo-tts.bobplugin](https://github.com/muxiaoxiii/mimo-tts-updated/releases/latest/download/mimo-tts.bobplugin)
+1. 下载 [mimo-tts.bobplugin](https://github.com/muxiaoxiii/bob-plugin-mimo-tts-updated/releases/latest/download/mimo-tts.bobplugin)
 2. 双击安装到 Bob
 
 ### 方法二：手动打包
 ```bash
 # 克隆仓库
-git clone https://github.com/muxiaoxiii/mimo-tts-updated.git
-cd mimo-tts-updated
+git clone https://github.com/muxiaoxiii/bob-plugin-mimo-tts-updated.git
+cd bob-plugin-mimo-tts-updated
 
 # 打包插件
 zip mimo-tts.bobplugin main.js info.json
