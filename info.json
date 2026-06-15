@@ -17,7 +17,7 @@
             "defaultValue": "default",
             "menuValues": [
                 {"title": "默认 (api.xiaomimimo.com)", "value": "default"},
-                {"title": "Token Plan (token-plan-cn.xiaomimomo.com)", "value": "tokenplan"},
+                {"title": "Token Plan (token-plan-cn.xiaomimimo.com)", "value": "tokenplan"},
                 {"title": "自定义", "value": "custom"}
             ]
         },

@@ -39,14 +39,25 @@ function getBaseUrl() {
 function doTtsRequest(apiKey, text, voice, completion) {
     var baseUrl = getBaseUrl();
     var endpoint = baseUrl + '/chat/completions';
+    var option = $option.baseUrlOption || 'default';
+    
+    // 根据端点类型选择认证头
+    var headers = {
+        'Content-Type': 'application/json'
+    };
+    
+    if (option === 'tokenplan') {
+        // Token Plan 使用标准 Authorization Bearer
+        headers['Authorization'] = 'Bearer ' + apiKey;
+    } else {
+        // 默认端点和自定义使用 api-key 头
+        headers['api-key'] = apiKey;
+    }
     
     $http.request({
         method: 'POST',
         url: endpoint,
-        header: {
-            'api-key': apiKey,
-            'Content-Type': 'application/json'
-        },
+        header: headers,
         body: {
             model: 'mimo-v2.5-tts',
             stream: false,
@@ -80,10 +91,20 @@ function doTtsRequest(apiKey, text, voice, completion) {
                 var data = typeof resp.data === 'string' ? JSON.parse(resp.data) : resp.data;
 
                 if (data.error) {
+                    var errorMsg = data.error.message || JSON.stringify(data.error);
+                    // 特别标注常见错误
+                    if (errorMsg.indexOf('quota') !== -1 || errorMsg.indexOf('exhausted') !== -1) {
+                        errorMsg = '❌ API 配额已用完，请充值或检查账户额度\n原始错误: ' + errorMsg;
+                    } else if (errorMsg.indexOf('Invalid') !== -1 || errorMsg.indexOf('invalid') !== -1) {
+                        errorMsg = '❌ API Key 无效，请检查密钥是否正确\n原始错误: ' + errorMsg;
+                    } else if (errorMsg.indexOf('401') !== -1 || errorMsg.indexOf('Unauthorized') !== -1) {
+                        errorMsg = '❌ 认证失败，请检查 API Key 和 Base URL 是否匹配\n原始错误: ' + errorMsg;
+                    }
+                    
                     completion({
                         error: {
                             type: 'api',
-                            message: data.error.message || JSON.stringify(data.error),
+                            message: errorMsg,
                             addition: data
                         }
                     });
