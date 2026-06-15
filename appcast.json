@@ -2,6 +2,14 @@
     "identifier": "cn.foreverben.mimo-tts",
     "versions": [
         {
+            "version": "0.3.0",
+            "desc": "修复认证方式，优化错误提示（配额/密钥/认证失败等）",
+            "sha256": "700359273925802434c10ff42622a233f6c1eafe2e620b0db05d3c1bbfad075d",
+            "url": "https://github.com/muxiaoxiii/mimo-tts-updated/releases/download/v0.3.0/mimo-tts.bobplugin",
+            "minBobVersion": "1.6.0",
+            "timestamp": 1749866400000
+        },
+        {
             "version": "0.2.0",
             "desc": "支持多端点配置（默认/Token Plan/自定义）、优化 API Key 说明、更新默认音色",
             "sha256": "0bcd087b7deea895004bc3d95d3dbafe00512c640c108747bb55d90eb974d38d",

@@ -1,6 +1,6 @@
 {
     "identifier": "cn.foreverben.mimo-tts",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "category": "tts",
     "name": "小米 Mimo TTS",
     "summary": "Xiaomi Mimo TTS 语音合成",

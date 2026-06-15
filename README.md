@@ -69,6 +69,14 @@ zip mimo-tts.bobplugin main.js info.json
 
 ## 版本历史
 
+### v0.3.0 (2026-06-15)
+- 修复 Token Plan URL 拼写错误
+- 根据端点类型自动选择认证方式（api-key vs Authorization Bearer）
+- 优化错误提示信息：
+  - 配额用完提示充值
+  - API Key 无效提示检查密钥
+  - 认证失败提示检查端点匹配
+
 ### v0.2.0 (2026-06-15)
 - 新增 Base URL 配置选项
 - 支持 Token Plan 端点
